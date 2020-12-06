@@ -6,6 +6,9 @@ As funcionalidades suportadas são:
 * Salvar as notícias de um ou todos os sites em um arquivo csv
 * Fazer buscas para retornar apenas as notícias que contenham a palavra buscada
 
+## Vídeo explicativo
+[Link](https://drive.google.com/file/d/1UuKN3aeEJ6L5ZNmBElYewO-laKGqRXo4/view?usp=sharing)
+
 ## Execução
 Para executar o código em seu computador certifique-se que tenha o [python](https://www.python.org/downloads/) instalado.
 
@@ -15,3 +18,9 @@ Para executar, vá ao diretório onde se encontram os arquivos de código e util
 ```
 python3 main.py
 ```
+
+### Participante
+
+| Aluno                 | RA     |
+| --------------------- | ------ |
+| Vitor Moreira Moreale | 756190 |
