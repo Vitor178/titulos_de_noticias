@@ -1,5 +1,7 @@
-# Arquivo responsável por receber as informações das notícias e salva-lás 
-# em um arquivo no formato csv;
+""" 
+Arquivo responsável por receber as informações das notícias e salva-lás 
+em um arquivo no formato csv;
+"""
 
 from datetime import date
 import csv
@@ -13,6 +15,7 @@ def save_as_CSV(_list, siteName):
         writer.writeheader()
         for item in _list:
             writer.writerow(item)
+    print('noticias salvas no arquivo %s' % (fileName))
 
 def getFileName(siteName):
     today = date.today().strftime("%d-%b-%Y")
