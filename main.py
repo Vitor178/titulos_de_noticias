@@ -1,4 +1,6 @@
-# Arquivo responsável por realizar a interação com o usuário
+"""
+Arquivo responsável por realizar a interação com o usuário
+"""
 
 import parserHTML
 import actions
@@ -6,6 +8,7 @@ import actions
 
 def main():
 
+    # Escolhe a ação a se fazer sobre as notícias
     while True:
         print('\nEscolha a ação desejada:')
         for acao in actions.available_actions.keys():
@@ -15,7 +18,8 @@ def main():
             print("opção escolhida não pertece as opções disponíveis!")
         else:
             break
-    
+
+    # Escolhe o site de notícia
     while True:
         print('\nEscolha o site para realizar a ação escolhida:')
         for name in parserHTML.available_sites.keys():

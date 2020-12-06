@@ -28,27 +28,26 @@ def globo():
     noticias = []
     page = requests.get('https://www.globo.com/').content
     soup = BeautifulSoup(page.decode('utf8'), 'html.parser')
+    noticias1 = soup.find_all(class_="hui-premium-foto__highlight-link")
+    noticias2 = soup.find_all(class_="hui-highlight__link")
+    noticias3 = soup.find_all(class_="topglobocom__content-title")
 
-    noticias_principais = soup.find_all(class_="hui-premium__link")
-    noticias_menos_principais_aux = soup.find_all(class_="hui-premium__related-link")
-    
-    #noticias_raw2 = soup.find_all(class_="hui-highlight__link")
     id = 0
-    for item in noticias_principais:
+    for item in noticias1:
         dictAux = {'id': id, 'link': item.get('href'), 'titulo': item.get('title').replace('\n',' ')}
         noticias.append(dictAux)
         id+=1
-        #print(item.get('href') + '\n' +  item.get('title') + '\n\n')
+        
+    for item in noticias2:
+        if(item.get('title') and item.get('rel')):
+            dictAux = {'id': id, 'link': item.get('href'), 'titulo': item.get('title').replace('\n',' ')}
+            noticias.append(dictAux)
+            id+=1
 
-    for item in noticias_menos_principais_aux:
+    for item in noticias3:
         dictAux = {'id': id, 'link': item.get('href'), 'titulo': item.get('title').replace('\n',' ')}
-        id+=1
         noticias.append(dictAux)
-        #print(item.get('href') + '\n' +  item.get('title') + '\n\n')
-
-    # for item in noticias_raw2:
-    #     if item.get('rel'):
-    #         print(item.get('href') + '\n' +  item.get('title') + '\n\n')
+        id+=1
 
     return noticias, 'globo.com'
     
