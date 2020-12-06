@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 
 # Dicionário e função responsáveis por proteger a função main
 # Adições de sites aqui não alterarão o código lá
-available_sites = {'Globo.com': 1, 'cnn.com': 2}
+available_sites = {'Globo.com': 1, 'noticias.uol.com.br': 2}
 def getNews(id):
     if id == 1:
         _list, name = globo()
